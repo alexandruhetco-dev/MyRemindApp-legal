@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghid de utilizare — MyRemindApp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0EA5E9;
+    --navy: #1E2D5A;
+    --bg: #F8FAFC;
+    --card: #FFFFFF;
+    --accent-light: #EEF6FD;
+    --text: #1E2D5A;
+    --muted: #64748B;
+    --border: #E2E8F0;
+    --amber: #F59E0B;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  header {
+    background: linear-gradient(135deg, var(--primary), #38bdf8);
+    color: #fff;
+    padding: 48px 24px 64px;
+    text-align: center;
+  }
+  header .logo {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .app-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  header h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    margin: 0 0 8px;
+  }
+  header p { margin: 0; font-size: 14px; opacity: 0.9; }
+
+  .wrap { max-width: 760px; margin: -32px auto 0; padding: 0 20px 60px; }
+  .card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 10px 40px rgba(30,45,90,0.08);
+  }
+
+  nav.toc { background: var(--accent-light); border-radius: 14px; padding: 20px 24px; margin-bottom: 32px; }
+  nav.toc h2 {
+    font-family: 'Sora', sans-serif; font-size: 14px; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--primary); margin: 0 0 10px;
+  }
+  nav.toc ol { margin: 0; padding-left: 20px; columns: 2; font-size: 14px; }
+  nav.toc li { margin-bottom: 6px; }
+  nav.toc a { color: var(--navy); text-decoration: none; }
+  nav.toc a:hover { color: var(--primary); }
+
+  h2 {
+    font-family: 'Sora', sans-serif; font-size: 22px; font-weight: 800;
+    margin: 40px 0 6px; padding-top: 28px; border-top: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+  }
+  section:first-of-type h2 { border-top: none; padding-top: 0; margin-top: 0; }
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border-radius: 9px; background: var(--primary);
+    color: #fff; font-size: 14px; font-weight: 800; flex-shrink: 0;
+  }
+  h3 {
+    font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 700;
+    margin: 22px 0 8px; color: var(--primary);
+  }
+  p, li { font-size: 15px; color: var(--text); }
+  ul, ol.steps { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  strong { color: var(--navy); }
+
+  .shot {
+    margin: 16px 0 20px;
+    border: 2px dashed #D1E3FF;
+    border-radius: 14px;
+    background: var(--accent-light);
+    padding: 22px 18px;
+    text-align: center;
+    color: var(--muted);
+  }
+  .shot .icon { font-size: 28px; display: block; margin-bottom: 6px; }
+  .shot .filename {
+    display: inline-block; margin-top: 8px; font-family: monospace;
+    background: #fff; border: 1px solid var(--border); border-radius: 6px;
+    padding: 2px 8px; font-size: 12px; color: var(--navy);
+  }
+  .shot .desc { font-size: 13px; margin-top: 4px; }
+
+  .badge {
+    display: inline-block; background: var(--accent-light); color: var(--primary);
+    font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-left: 4px;
+  }
+  .badge.amber { background: #FEF3C7; color: var(--amber); }
+  .badge.green { background: #DCFCE7; color: #16A34A; }
+
+  .video-note {
+    background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 12px;
+    padding: 14px 16px; font-size: 14px; margin-top: 28px;
+  }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 4px; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--accent-light); color: var(--navy); font-weight: 700; font-size: 13px; }
+
+  footer { text-align: center; padding: 32px 20px 48px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><img src="data:image/png;base64,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" alt="MyRemindApp" class="app-logo"> MyRemindApp</div>
+  <h1>Ghid de utilizare</h1>
+  <p>Tot ce trebuie să știi pentru a nu mai rata niciun termen important</p>
+</header>
+
+<div class="wrap">
+  <div class="card">
+
+    <nav class="toc">
+      <h2 style="border:none;padding:0;margin:0 0 10px;display:block;">Cuprins</h2>
+      <ol>
+        <li><a href="#cont">1. Creare cont</a></li>
+        <li><a href="#ecran-principal">2. Ecranul principal</a></li>
+        <li><a href="#adauga">3. Adaugă un reminder</a></li>
+        <li><a href="#notificari">4. Notificări</a></li>
+        <li><a href="#documente">5. Documente atașate</a></li>
+        <li><a href="#calendar">6. Calendar</a></li>
+        <li><a href="#shared">7. Grupuri &amp; Shared</a></li>
+        <li><a href="#planuri">8. Planuri</a></li>
+        <li><a href="#setari">9. Setări</a></li>
+        <li><a href="#faq">10. Întrebări frecvente</a></li>
+        <li><a href="#export">11. Export date</a></li>
+      </ol>
+    </nav>
+
+    <section id="cont">
+      <h2><span class="step-num">1</span> Creare cont</h2>
+      <p>
+        La prima lansare, creează-ți un cont folosind adresa de email și o parolă. Poți
+        recupera parola oricând prin opțiunea "Ai uitat parola?".
+      </p>
+      <img src="screenshots/01-auth.jpeg" alt="Ecran autentificare / înregistrare" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+    </section>
+
+    <section id="ecran-principal">
+      <h2><span class="step-num">2</span> Ecranul principal</h2>
+      <p>
+        Ecranul "Remindere" este împărțit în trei tab-uri:
+      </p>
+      <ul>
+        <li><strong>Urgente (30 zile)</strong> — remindere de expirare care apar în
+          următoarele 30 de zile, evenimente din următoarea săptămână și toate
+          reminderele recurente.</li>
+        <li><strong>Toate</strong> — toate reminderele tale, indiferent de dată.</li>
+        <li><strong>👥 Shared</strong> — remindere partajate cu tine de membrii grupurilor
+          tale (vezi secțiunea 7).</li>
+      </ul>
+      <img src="screenshots/02-dashboard.jpeg" alt="Dashboard cu tab-urile Urgente / Toate / Shared" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+      <p>
+        Fiecare reminder are un <strong>badge colorat</strong> care arată starea: roșu =
+        expirat / astăzi, portocaliu = în mai puțin de 7 zile, albastru = în mai puțin de
+        30 de zile, verde = OK.
+      </p>
+    </section>
+
+    <section id="adauga">
+      <h2><span class="step-num">3</span> Adaugă un reminder</h2>
+      <p>Apasă pe tab-ul <strong>Adaugă</strong> din bara de jos. Alege unul dintre cele 3 tipuri:</p>
+
+      <h3>📅 Expirare</h3>
+      <p>
+        Pentru documente cu o dată fixă de expirare (RCA, ITP, pașaport, certificat
+        medical etc.). Poți seta până la 3 notificări, fiecare cu un număr de zile
+        înainte de expirare (ex: 30, 14, 7 zile).
+      </p>
+      <img src="screenshots/03-add-expiry.jpeg" alt="Adăugare reminder — tip Expirare" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+
+      <h3>🔁 Recurent</h3>
+      <p>
+        Pentru lucruri care se repetă: plata chiriei, o ședință săptămânală, medicamente
+        zilnice. Alege frecvența — zilnic, săptămânal sau lunar — și data de start.
+      </p>
+      <img src="screenshots/04-add-recurring.jpeg" alt="Adăugare reminder — tip Recurent" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+
+      <h3>⭐ Eveniment</h3>
+      <p>
+        Pentru un singur eveniment cu oră exactă: o ședință, o programare la medic, o
+        zi de naștere. Alege o categorie (🤝 Ședință, 🏥 Medical, 🎂 Aniversare etc.),
+        data și ora, plus o notă opțională.
+      </p>
+      <img src="screenshots/05-add-event.jpeg" alt="Adăugare reminder — tip Eveniment" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+    </section>
+
+    <section id="notificari">
+      <h2><span class="step-num">4</span> Notificări</h2>
+      <p>Pentru remindere de tip Expirare și Recurent poți alege metoda de notificare:</p>
+      <table>
+        <tr><th>Metodă</th><th>Descriere</th></tr>
+        <tr><td>📱 Push</td><td>Notificare directă pe telefon, la ora aleasă</td></tr>
+        <tr><td>📧 Email</td><td>Email trimis pe adresa contului sau una personalizată</td></tr>
+        <tr><td>📱📧 Ambele</td><td>Atât push, cât și email</td></tr>
+      </table>
+      <p>
+        Numărul de email-uri lunare depinde de planul tău
+        <span class="badge">Free: 0</span>
+        <span class="badge amber">Standard: 20/lună</span>
+        <span class="badge green">Premium: 150/lună</span>.
+        Dacă atingi limita, rămâne disponibilă doar notificarea push pentru restul lunii.
+      </p>
+    </section>
+
+    <section id="documente">
+      <h2><span class="step-num">5</span> Documente atașate</h2>
+      <p>
+        Din ecranul de editare al unui reminder, poți atașa o poză sau un PDF (ex. o
+        scanare a poliței RCA). Documentele sunt salvate <strong>doar pe telefonul
+        tău</strong> — nu sunt încărcate online și nu sunt vizibile altor utilizatori.
+      </p>
+      <img src="screenshots/06-documents.jpeg" alt="Documente atașate" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+    </section>
+
+    <section id="calendar">
+      <h2><span class="step-num">6</span> Calendar <span class="badge amber">Standard / Premium</span></h2>
+      <p>
+        Bifează "📅 Adaugă în calendar" pentru ca reminder-ul să apară și în aplicația de
+        Calendar a telefonului:
+      </p>
+      <ul>
+        <li><strong>Expirare</strong> → câte un eveniment all-day pentru fiecare
+          notificare configurată + unul în ziua exactă a expirării.</li>
+        <li><strong>Recurent</strong> → un eveniment recurent (zilnic/săptămânal/lunar).</li>
+        <li><strong>Eveniment</strong> → un eveniment cu oră exactă.</li>
+      </ul>
+      <img src="screenshots/07-calendar.jpeg" alt="Adaugă în calendar" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+    </section>
+
+    <section id="shared">
+      <h2><span class="step-num">7</span> Grupuri &amp; Shared <span class="badge amber">Creare grup: Standard / Premium</span></h2>
+      <p>
+        Din <strong>Setări → Grupurile mele</strong>, poți crea un grup (Familie, Prieteni,
+        Vecini, Colegi) și invita alți utilizatori prin adresa lor de email.
+      </p>
+      <img src="screenshots/08-groups.jpeg" alt="Grupurile mele" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+      <p>
+        La adăugarea/editarea unui reminder de tip Expirare sau Recurent, poți alege
+        <strong>"Partajează cu grup"</strong>. Reminder-ul va apărea pentru toți membrii
+        grupului în tab-ul <strong>👥 Shared</strong>.
+      </p>
+      <ul>
+        <li>Membrii pot doar <strong>vizualiza</strong> reminderul (nu îl pot edita sau
+          șterge).</li>
+        <li>Oricine din grup poate marca reminderul ca <strong>"✅ Rezolvat"</strong> sau
+          <strong>"🔧 În lucru"</strong> — toți ceilalți membri primesc o notificare push
+          despre schimbare.</li>
+      </ul>
+      <img src="screenshots/09-shared-tab.jpeg" alt="Tab Shared, status În lucru" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+    </section>
+
+    <section id="planuri">
+      <h2><span class="step-num">8</span> Planuri</h2>
+      <table>
+        <tr><th>Plan</th><th>Expirare</th><th>Recurent</th><th>Email/lună</th><th>Extra</th></tr>
+        <tr><td>Free</td><td>5</td><td>3</td><td>—</td><td>Push, membru în grupuri</td></tr>
+        <tr><td>Standard</td><td>10</td><td>10</td><td>20</td><td>Excel, Calendar, creare grupuri</td></tr>
+        <tr><td>Premium</td><td>100</td><td>50</td><td>150</td><td>+ Trimitere email direct furnizor</td></tr>
+      </table>
+      <img src="screenshots/10-pricing.jpeg" alt="Planuri & Abonamente" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+    </section>
+
+    <section id="setari">
+      <h2><span class="step-num">9</span> Setări</h2>
+      <p>Din ecranul Setări poți:</p>
+      <ul>
+        <li>Schimba limba aplicației (Română / English);</li>
+        <li>Vedea planul curent și face upgrade;</li>
+        <li>Gestiona grupurile (vezi secțiunea 7);</li>
+        <li>Configura adresa/aspectul email-urilor de notificare;</li>
+        <li>Trimite un email de test;</li>
+        <li>Te deconecta din cont.</li>
+      </ul>
+      <img src="screenshots/11-settings.jpeg" alt="Setări" style="width:100%;max-width:340px;display:block;margin:16px auto 20px;border-radius:18px;box-shadow:0 8px 24px rgba(30,45,90,0.12);">
+    </section>
+
+    <section id="faq">
+      <h2><span class="step-num">10</span> Întrebări frecvente</h2>
+
+      <h3>Nu am primit notificarea push</h3>
+      <p>
+        Verifică în Setările telefonului că ai permis notificările pentru MyRemindApp.
+        Notificările push funcționează doar pe dispozitiv fizic, nu în simulator.
+      </p>
+
+      <h3>Nu am primit email-ul de notificare</h3>
+      <p>
+        Email-urile se trimit o singură dată pe zi, la ora setată pentru reminder.
+        Verifică și folderul Spam/Promoții.
+      </p>
+
+      <h3>Pot edita un reminder partajat de altcineva?</h3>
+      <p>
+        Nu — un reminder partajat de un alt membru al grupului este doar pentru
+        vizualizare. Singura acțiune permisă este marcarea ca "Rezolvat" / "În lucru".
+      </p>
+
+      <h3>Ce se întâmplă cu documentele atașate dacă schimb telefonul?</h3>
+      <p>
+        Documentele sunt salvate local, deci nu se transferă automat. Recomandăm să le
+        salvezi separat (ex. trimise pe email) înainte de a schimba dispozitivul.
+      </p>
+    </section>
+
+    <section id="export">
+      <h2><span class="step-num">11</span> Export date</h2>
+      <p>
+        Din ecranul principal, butonul <strong>"📊 Excel"</strong> (vizibil în partea
+        dreaptă sus) generează un fișier <strong>.xlsx</strong> cu toate reminderele tale
+        — denumire, categorie, dată, status și notă — pe care îl poți salva sau trimite
+        pe email.
+      </p>
+      <p>
+        Această funcție este disponibilă pentru planurile <strong>Standard</strong> și
+        <strong>Premium</strong>.
+      </p>
+    </section>
+  </div>
+</div>
+
+<footer>
+  © 2026 HVA MyRemindApp. All rights reserved. ·
+  <a href="how-to-use-en.html">English version</a>
+</footer>
+
+</body>
+</html>
